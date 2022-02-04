@@ -1,0 +1,24 @@
+  - task: AzureCLI@2 
+    displayName: Access Token
+    inputs:
+      azureSubscription: 'your subscription'
+      scriptType: pscore
+      scriptLocation: inlineScript
+      inlineScript: | 
+          $token = az account get-access-token --resource 'your resource id' --query 'accessToken'
+          Write-Host "##vso[task.setvariable variable=tokenvar]$token"
+
+  - task: VSTest@2
+    displayName: 'Test Assemblies'
+    inputs:
+      testAssemblyVer2: |
+        **\$(BuildConfiguration)\*\*test.dll
+        !**\obj\**
+      runSettingsFile: 'your path to runsettings file'
+      overrideTestrunParameters: '-token $(tokenvar)'
+      platform: '$(BuildPlatform)'
+      configuration: '$(BuildConfiguration)'
+
+
+ 
+   

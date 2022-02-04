@@ -1,0 +1,6 @@
+IJavaScriptExecutor js = _driver as IJavaScriptExecutor;
+js.ExecuteScript("window.location.href = 'https://google.com/'");
+var currentToken = TestContext.Parameters["token"].ToString();
+js.ExecuteScript("window.sessionStorage.setItem('token', arguments[0]);", currentToken);
+
+_driver.Navigate().GoToUrl("https://google.com/");

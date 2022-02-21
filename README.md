@@ -31,7 +31,7 @@ Now the solution was separated into 2 steps.
  
  Add the following code in your selenium project before launching your browser.
  
- ![](https://github.com/Vikas1116/SeleniumBypassADAuthentication/blob/main/Images/Image3.png)
+ ![](https://github.com/Vikas1116/SeleniumBypassADAuthentication/blob/main/Images/image3.png)
  
 We use javascript executors to go to the application url, get the access token from runsettings, set session storage with the current access token and navigate again to the url. 
 

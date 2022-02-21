@@ -17,7 +17,7 @@ Now the solution was separated into 2 steps.
 
 
 ## Step 1: Fetch the access token from build/release pipeline
- ![](https://github.com/Vikas1116/SeleniumBypassADAuthentication/blob/main/Images/1.png)
+ ![](https://github.com/Vikas1116/SeleniumBypassADAuthentication/blob/main/Images/Image1.png)
  
  The first task here executes couple of powershell commands, to fetch the access token for your resource id and pass this token to the subsequent tasks in the below pipeline.
  
@@ -27,11 +27,11 @@ Now the solution was separated into 2 steps.
  
  Add a runsettings file with a parameter having default value.
  
- ![](https://github.com/Vikas1116/SeleniumBypassADAuthentication/blob/main/Images/2.png)
+ ![](https://github.com/Vikas1116/SeleniumBypassADAuthentication/blob/main/Images/Image2.png)
  
  Add the following code in your selenium project before launching your browser.
  
- ![](https://github.com/Vikas1116/SeleniumBypassADAuthentication/blob/main/Images/3.png)
+ ![](https://github.com/Vikas1116/SeleniumBypassADAuthentication/blob/main/Images/Image3.png)
  
 We use javascript executors to go to the application url, get the access token from runsettings, set session storage with the current access token and navigate again to the url. 
 
